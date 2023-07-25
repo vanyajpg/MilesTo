@@ -1,1 +1,33 @@
-user profile
+<%- include('partials/header') -%>
+
+profile page 
+<body class="bg-[#ffffff] text-[#3d6d7b]">
+    <div class="">
+      <div class="">
+          <div class=""> 
+              <div class="">
+                  <h1 class="uppercase text-3xl ml-10 mt-10"><strong>Welcome <%= user.userName %></strong></h1>
+              </div>
+          </div>
+          <div class="mt-5 w-4/5 mx-auto">
+            <ul class="flex flex-col grid grid-cols-3 gap-1 m-5">
+            <% for(var i=0; i<posts.length; i++) {%>
+              <li class="my-1">
+                <a href="/post/<%= posts[i]._id%>">
+                  <img class="img-fluid h-full" src="<%= posts[i].image%>">
+                </a>
+              </li>
+            <% } %>
+            </ul>
+          </div>
+          </div> 
+        </div>
+        <div class="absolute bottom-0 right-0 mb-10 mr-10">
+          <button class="p-2 px-3  border-1 border-[#2a94b4] bg-[#1c687f] text-white rounded-lg hover:bg-[#8AC4CC] hover:text-[#1c687f]">
+            <a href="/logout">LOGOUT</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  
