@@ -1,4 +1,4 @@
-// const cloudinary = require("../middleware/cloudinary");
+const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const User = require("../models/User");
 
@@ -40,19 +40,14 @@ module.exports = {
   createPost: async (req, res) => {
     try {
       // Upload image to cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path);
+      // const result = await cloudinary.uploader.upload(req.file.path);
 
       await Post.create({
         title: req.body.title,
-        image: result.secure_url,
-        cloudinaryId: result.public_id,
-        caption: req.body.caption,
-        likes: 0,
+        // image: result.secure_url,
+        // cloudinaryId: result.public_id,
+        count: req.body.count,
         user: req.user.id,
-        yogaWorkout1: req.body.yogaWorkout1,
-        yogaWorkout2: req.body.yogaWorkout2,
-        yogaWorkout3: req.body.yogaWorkout3,
-        yogaWorkout4: req.body.yogaWorkout4,
 
       });
       console.log("Post has been added!");

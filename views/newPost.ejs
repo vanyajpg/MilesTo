@@ -1,0 +1,36 @@
+<%- include('partials/header') -%>
+<%- include('partials/app-content') -%>
+
+<body class="bg-[#ffffff] text-[#3d6d7b]">
+    <div class="ml-10 text-center">
+        <h2 class="text-3xl font-semibold mt-4 mb-4"></h2>
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST" class="flex flex-col justify-center items-center">
+                <div class="flex flex-row mb-1 justify-around  bg-[#4f7153] w-64">
+                <label for="count" class="form-label p-2 border text-emerald-50 uppecase font-semibold flex-grow basis-0 border-white">log how many steps you have walked today</label>
+                </div>
+                <div class="flex flex-center">
+                    <input type="text" class="bg-[#cce1cc] form-control mb-1 w-64 p-2" id="count" name="count">
+                </div>
+                <button type="submit" class="p-2 px-3  border-1 border-[#2a94b4] bg-[#1c687f] text-white rounded-lg hover:bg-[#8AC4CC] hover:text-[#1c687f]" value="Upload">Submit</button>
+            </form>
+    </div> 
+</body>
+
+<!-- <body class="bg-[#ffffff] text-[#3d6d7b]">
+    <div class="ml-10 text-center">
+        <h2 class="text-3xl font-semibold mt-4 mb-4"></h2>
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST" class="flex flex-col justify-center items-center">
+                <div class="form">
+                    <p>
+                      <label>count <span>*</span> </label>
+                      <input name="count" type="text" class="field size" />
+                    </p>
+                    <button type="submit" class="p-2 px-3  border-1 border-[#2a94b4] bg-[#1c687f] text-white rounded-lg hover:bg-[#8AC4CC] hover:text-[#1c687f]" value="Upload">Submit</button>
+                </div>
+            </form>
+    </div> 
+</body> -->
+
+
+
+<%- include('partials/footer') -%>
