@@ -1,5 +1,69 @@
-        title: req.body.title,
-        image: result.secure_url,
-        cloudinaryId: result.public_id,
-        count: req.body.count,
-        user: req.user.id,
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Posts Calendar</title>
+  <style>
+    /* Add your custom CSS styles here */
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      margin-left: 96px;
+    }
+    .day {
+      border: 1px solid #ccc;
+      padding: 10px;
+      min-height: 100px;
+      position: relative;
+    }
+    .date {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .count {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Posts Calendar</h1>
+  <form>
+    <label for="filterMonth">Filter by Month:</label>
+    <input type="month" id="filterMonth" name="filterMonth" onchange="handleFilterChange(this)">
+  </form>
+  <div class="calendar">
+    <% let currentMonth = -1; %>
+    <% posts.forEach((post, index) => { %>
+      <% const postDate = new Date(post.date); %>
+      <% if (postDate.getMonth() !== currentMonth) { %>
+        <% currentMonth = postDate.getMonth(); %>
+        <% const daysInMonth = new Date(postDate.getFullYear(), currentMonth + 1, 0).getDate(); %>
+        <% for (let day = 1; day <= daysInMonth; day++) { %>
+          <div class="day">
+            <div class="date"><%= new Date(postDate.getFullYear(), currentMonth, day).toDateString() %></div>
+          </div>
+        <% } %>
+      <% } %>
+      <div class="day">
+        <div class="date"><%= postDate.toDateString() %></div>
+        <div class="count"><%= post.count %> steps</div>
+      </div>
+    <% }); %>
+  </div>
+
+  <script>
+    function handleFilterChange(selectElement) {
+      const selectedMonth = selectElement.value;
+      const dayElements = document.querySelectorAll('.day');
+
+      dayElements.forEach(dayElement => {
+        dayElement.style.display = 'none';
+        const dateElement = dayElement.querySelector('.date');
+        if (dateElement && dateElement.textContent.includes(selectedMonth)) {
+          dayElement.style.display = 'block';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

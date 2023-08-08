@@ -11,12 +11,16 @@ const PostSchema = new mongoose.Schema({
   //   require: false,
   // },
   count: {
-    type: String,
+    type: Number,
     required: true,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
+  },
+  totalSteps: {
+    type: Number,
+    required: false,
   },
   date: {
     type: Date,
@@ -24,4 +28,44 @@ const PostSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Post", PostSchema);
+
+const Post = module.exports = mongoose.model("Post", PostSchema);
+
+//  var obj =  Post.aggregate([
+//   {
+//       $group:
+//       {
+//           _id: { count: "$user" },
+//           totalSteps: { $sum: "$count"},
+//       }
+//   }
+// ])
+
+  // .then(result => {
+  //     console.log(JSON.stringify(result))
+  // })
+  // .catch(error => {
+  //     console.log(error)
+  // })
+
+  var obj = Post.aggregate(
+    [
+        {
+            $group: {
+          _id: { count: "$user" },
+          sum:{$sum:"$count"},
+            }
+        },
+    ]
+)
+// console.log(obj)
+  
+  .then(result => {
+    console.log((result[0].sum))
+  })
+  .catch(error => {
+      console.log(error)
+  })
+
+
+
