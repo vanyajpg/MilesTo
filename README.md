@@ -6,7 +6,7 @@ As someone who is now living in NYC, I thought it would be extremely fascinating
 
 ![image](https://github.com/vanyajpg/MilesTo/assets/113653431/9b7f4b82-cccc-426c-bb89-2e5d342e6a9c)
 <img width="1360" alt="image" src="https://github.com/vanyajpg/MilesTo/assets/113653431/bcfabfcc-bee9-4fbe-866b-e03af3db8e07">
-<img width="1427" alt="image" src="https://github.com/vanyajpg/MilesTo/assets/113653431/b970e934-bdb6-48a1-a2f6-f3317b163a54">
+<img width="1423" alt="image" src="https://github.com/vanyajpg/MilesTo/assets/113653431/de745ba7-6140-4409-82c3-ea5fa49d5096">
 <img width="1427" alt="image" src="https://github.com/vanyajpg/MilesTo/assets/113653431/91c274d6-68e8-4785-910c-56cc53ff6724">
 
 # How It's Made:
