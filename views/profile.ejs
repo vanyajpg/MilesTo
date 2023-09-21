@@ -9,29 +9,29 @@
               <div class="">
                   <h1 class=" text-center font-bold my-12 text-4xl bg-clip-text text-transparent bg-gradient-to-r from-emerald-900 to-emerald-500 capitalize">Greetings <%= user.userName %>!</h1>
               </div>
-              <div class="grid grid-cols-2">
+              <div class="grid grid-cols-2 items-center">
                        <% let totalCount = 0; %>
                       <% posts.reverse().forEach(post => { %>
                         <% totalCount += post.count; %>
                       <% }); %>
-                      <div class="text-center bg-white mx-32 pt-20 pb-32 w-3/4 rounded shadow-xl">
-                            <h1 class=" text-2xl font-semibold pb-8 pt-16">Let's recap how many <br> steps you've logged so far:</h1>
+                      <div class="text-center bg-white mx-32 pt-20 pb-32 w-3/4 rounded shadow-xl hover:shadow-2xl transition duration-500">
+                            <h1 class=" text-3xl font-semibold pb-8 pt-16">Let's recap how many <br> steps you've logged so far:</h1>
                           <div class=" text-xl flex space-x-8 justify-center">
-                              <p class="border border-blue-200 py-2 px-4 rounded shadow-sm bg-blue-100"><%= totalCount %> steps</p>
+                              <p class="border border-blue-200 py-2 px-4 rounded shadow-sm bg-blue-100 transform transition duration-500 hover:scale-125"><%= totalCount %> steps</p>
                               <% let totalMiles = (totalCount / 2000).toFixed(1); %>
-                              <p class="border border-blue-200 py-2 px-4 rounded shadow-sm bg-blue-100"><%= totalMiles %> miles</p>
+                              <p class="border border-blue-200 py-2 px-4 rounded shadow-sm bg-blue-100 transform transition duration-500 hover:scale-125"><%= totalMiles %> miles</p>
                           </div>
                       </div>
-                    <div class="text-center bg-white w-3/4 rounded shadow-xl">
+                    <div class="text-center bg-white w-3/4 rounded shadow-xl hover:shadow-2xl transition duration-500 ">
                       <img src="https://plus.unsplash.com/premium_photo-1677002240252-af3f88114efc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2850&q=80" alt="" class="h-4/6 w-full opacity-90 rounded-t">
                             <form action="/post/createPost" enctype="multipart/form-data" method="POST" class="">
                                 <div class="pt-4 pb-2">
                                   <label for="count" class="text-2xl font-semibold">Log the number of steps you walked today:</label>
                                 </div>
                                 <div class="">
-                                    <input type="text" class=" h-8 bg-blue-100 border border-blue-200 rounded shadow-sm" id="count" name="count">
+                                    <input type="text" class=" h-8 bg-blue-100 border border-blue-200 rounded shadow-sm focus:outline-none" id="count" name="count">
                                 </div>
-                                <button type="submit" class="bg-emerald-700 hover:bg-emerald-600 rounded shadow-lg text-emerald-100 px-3 py-1 transition duration-500 mt-2" value="Upload">submit </button>
+                                <button type="submit" class="bg-emerald-700 hover:bg-emerald-600 rounded shadow-lg text-emerald-100 px-3 py-1 transition duration-500 my-2" value="Upload">submit </button>
                             </form>
                     </div> 
               </div>

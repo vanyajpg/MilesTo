@@ -32,7 +32,7 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-r from-emerald-50 to-emerald-100 text-emerald-800">
+<body class="bg-gradient-to-r from-emerald-50 to-emerald-100 text-emerald-800 p-6">
   <div class="">
     <h1 class="text-4xl pt-8 capitalize text-center underline font-semibold">Your Steps Calendar</h1>
   </div>
@@ -46,7 +46,7 @@
         <% for (let day = 1; day <= daysInMonth; day++) { %>
         <% } %>
       <% } %>
-      <div class="day rounded shadow-xl">
+      <div class="day rounded shadow-lg hover:shadow-2xl transition duration-500">
         <div class="date text-center"><%= postDate.toDateString() %></div>
         <div class="count text-center"><%= post.count %> steps</div>
       </div>
