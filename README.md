@@ -4,10 +4,10 @@ MilesTo is a MERN application encouraging you to reach your daily step goals. Th
 
 As someone who is now living in NYC, I thought it would be extremely fascinating to be able to tally up all the miles I have ever walked in the last few months. When you use MilesTo, that is now possible at the click of a button!
 
-![image](https://github.com/vanyajpg/MilesTo/assets/113653431/9b7f4b82-cccc-426c-bb89-2e5d342e6a9c)
-<img width="1360" alt="image" src="https://github.com/vanyajpg/MilesTo/assets/113653431/bcfabfcc-bee9-4fbe-866b-e03af3db8e07">
-<img width="1423" alt="image" src="https://github.com/vanyajpg/MilesTo/assets/113653431/de745ba7-6140-4409-82c3-ea5fa49d5096">
-<img width="1427" alt="image" src="https://github.com/vanyajpg/MilesTo/assets/113653431/91c274d6-68e8-4785-910c-56cc53ff6724">
+
+![milesTo](https://github.com/vanyajpg/MilesTo/assets/113653431/5deb8b30-5874-4454-bebd-6e05aec87b1b)
+
+
 
 # How It's Made:
 Tech used: HTML, TailwindCSS, EmbeddedJavaScript, MongoDB
